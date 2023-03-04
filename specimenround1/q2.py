@@ -6,7 +6,7 @@ while True:
     break
 while True:
   n2 = int(input())
-  if n2 <= 0 or n2 > 1000:
+  if n2 < 0 or n2 > 1000:
     continue
   if n2 == n1:
     continue
