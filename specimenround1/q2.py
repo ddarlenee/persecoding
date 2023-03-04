@@ -1,5 +1,5 @@
 while True:
-  n1 = input()
+  n1 = int(input())
   if n1 < 0 or n1 > 1000:
     continue
   else:
