@@ -1,14 +1,15 @@
-char1 = input()
 while True:
+    char1 = input()
     char2 = input()
+    if len(char1) != 1 or len(char2) != 1:
+          continue
+    if char1.isdigit() or char2.isdigit():
+          continue
     if char2 == char1:
         continue
     else:
         break
-line1 = char1*2 + char2*6 + char1*2
-print(line1)
-line2 = char2*2 + char1*6 + char2*2
-print(line2)
-    
+print(char2*2 + char1*6 + char2*2)
+print(char1*2 + char2*6 + char1*2)
     
     
