@@ -10,8 +10,8 @@ while True:
       print("|..........H")
       loserposition = ""
       for i in range(12):
-        if i == loserposition:
-          loserposition == "H"
+        if i == horse1_stepcount:
+          loserposition += "H"
         elif i == 0 or i == 11:
           loserposition += "|"
         else:
@@ -20,8 +20,8 @@ while True:
       print("|..........H")
       loserposition = ""
       for i in range(12):
-        if i == loserposition:
-          loserposition == "H"
+        if i == horse0_stepcount:
+          loserposition += "H"
         elif i == 0 or i == 11:
           loserposition += "|"
         else:
