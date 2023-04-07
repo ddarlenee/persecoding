@@ -1,35 +1,46 @@
 horse0_stepcount = 0
 horse1_stepcount = 0
 
-while True:
-  bindigit = int(input())
-  if bindigit != 0 and bindigit != 1:
-    continue
-  if horse0_stepcount == 11 or horse1_stepcount == 11:
-    if horse0_stepcount == 11:
-      print("|..........H")
-      loserposition = ""
-      for i in range(12):
-        if i == horse1_stepcount:
-          loserposition += "H"
-        elif i == 0 or i == 11:
-          loserposition += "|"
-        else:
-          loserposition += "."
+def endposition(horse0_stepcount, horse1_stepcount):
+  if horse0_stepcount == 11:
+    if horse1_stepcount == 0:
+      line = "H..........|"
     else:
-      print("|..........H")
-      loserposition = ""
-      for i in range(12):
-        if i == horse0_stepcount:
-          loserposition += "H"
-        elif i == 0 or i == 11:
-          loserposition += "|"
-        else:
-          loserposition += "."
-    print(loserposition)
-    break
+      line = "|"
+    for j in range(1, 11):
+      if j == horse1_stepcount:
+        line += "H"
+      else:
+        line += "."
+    line += "|"
+    print("|..........H")
+    print(line)
   else:
-    if bindigit == 0:
-      horse0_stepcount += 1
+    if horse0_stepcount == 0:
+      line = "H..........|"
     else:
-      horse1_stepcount += 1
+      line = "|"
+    for j in range(1, 11):
+      if j == horse0_stepcount:
+        line += "H"
+      else:
+        line += "."
+    line += "|"
+    print(line)
+    print("|..........H")
+    
+# main
+for i in range(22):
+  while True:
+    bindigit = int(input())
+    if bindigit != 0 and bindigit != 1:
+      continue
+    if bindigit == 0:
+      if horse1_stepcount != 11:
+        horse0_stepcount += 1
+    else:
+      if horse0_stepcount != 11:
+        horse1_stepcount += 1
+    break
+
+endposition(horse0_stepcount, horse1_stepcount)
