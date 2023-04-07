@@ -7,23 +7,18 @@ while True:
   if initial <= 0 or initial > 10000:
     continue
   goodvalue = initial
-  for i in range(5):
-    while True:
-      newprice = input()
-      if newprice.isdigit() == False:
-        continue
-      else:
-        newprice = int(newprice)
-      if newprice < 0 or newprice > 10000:
-        continue
-      else:
-        break
+  while True:
+    newprice = input()
+    if newprice.isdigit() == False:
+      continue
+    else:
+      newprice = int(newprice)
+    if newprice < 0 or newprice > 10000:
+      continue
     if goodvalue < newprice:
       goodvalue = newprice
+      continue
     else:
-      if initial > newprice:
-        print(initial - newprice)
-      else:
-        print(newprice - initial)
+      print(newprice - initial)
       break
   break
