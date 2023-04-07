@@ -35,6 +35,12 @@ for i in range(22):
     bindigit = int(input())
     if bindigit != 0 and bindigit != 1:
       continue
+    if horse1_stepcount == 11:
+      if bindigit == 1:
+        continue
+    if horse0_stepcount == 11:
+      if bindigit == 0:
+        continue
     if bindigit == 0:
       if horse1_stepcount != 11:
         horse0_stepcount += 1
